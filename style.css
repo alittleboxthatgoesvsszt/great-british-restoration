@@ -68,6 +68,33 @@ header {
     color: #ffd700;
 }
 
+/* ==================== LINKS ==================== */
+
+/* Default link colors */
+a {
+    color: #7cb9ff;           /* Bright blue - good visibility */
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: #a8d2ff;           /* Even brighter on hover */
+}
+
+/* Visited links - make them distinctly brighter */
+a:visited {
+    color: #b8a0ff;           /* Soft bright purple - stands out well */
+}
+
+a:visited:hover {
+    color: #d0b8ff;
+}
+
+/* Optional: Make internal policy links even more prominent */
+.content a {
+    font-weight: 500;
+}
+
 /* Main Title - sits below the fixed nav */
 header h1 {
     margin: 90px 0 1.5rem 0;     /* Creates space under the fixed nav */
@@ -78,6 +105,11 @@ header h1 {
 /* Push the rest of the content down */
 main {
     margin-top: 20px;
+}
+
+/* Extra spacing under main section headings */
+.content h2 {
+    margin-bottom: 2.2rem;
 }
 
 /* Hero */
@@ -207,76 +239,68 @@ footer {
     margin-bottom: 2.5rem;
     line-height: 1.75;
 }
-
-.details-content {
-    padding: 1.8rem 2rem;
-    background: var(--card-bg);        /* Pale lilac */
-    border-top: 1px solid var(--border-color);
-    line-height: 1.7;
+details {
+    margin-bottom: 1.4rem;
+    border: 1px solid var(--border-color, #555);
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: var(--card-bg, #252525);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
-[data-theme="dark"] details {
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+details[open] {
+    border-color: #777;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
 summary {
-    padding: 1.4rem 1.8rem;
-    background: var(--card-bg);
-    cursor: pointer;
+    padding: 1.2rem 1.5rem;
+    font-size: 1.28rem;
     font-weight: 600;
-    font-size: 1.1rem;
-    transition: background 0.2s;
+    cursor: pointer;
+    background-color: var(--header-bg, #1f1f1f);
+    list-style: none;
+    position: relative;
+    transition: background-color 0.2s;
 }
 
 summary:hover {
-    background: #f5f5f5;
+    background-color: #2a2a2a;
 }
 
-[data-theme="dark"] summary:hover {
-    background: #333;
+summary::-webkit-details-marker {
+    display: none;
 }
 
-/* Content area */
+/* Custom arrow */
+summary::after {
+    content: "▶";
+    position: absolute;
+    right: 1.6rem;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::after {
+    transform: rotate(90deg);
+}
+
 .details-content {
-    padding: 1.8rem 2rem;
-    background: var(--bg-color);
-    border-top: 1px solid var(--border-color);
+    padding: 1.5rem 1.7rem;
     line-height: 1.7;
+    background-color: var(--card-bg, #252525);
 }
 
-/* Nested accordions - Indentation + visual hierarchy */
-.details-content details {
-    margin-left: 1.8rem;
-    margin-top: 1.2rem;
-    margin-bottom: 1.2rem;
-    border-left: 4px solid var(--accent-color);
-    border-radius: 8px;
+.details-content p {
+    margin-bottom: 1.1rem;
 }
 
-.details-content details summary {
-    padding: 1.1rem 1.5rem;
-    font-size: 1.05rem;
-    background: var(--card-bg);
+.details-content ol {
+    padding-left: 1.3rem;
 }
 
-.details-content .details-content {
-    padding-left: 2.2rem;
-}
-
-/* Even deeper nesting */
-.details-content details details {
-    margin-left: 2.2rem;
-    border-left-color: #888;
-}
-
-/* Optional: Add a nice open indicator */
-summary::marker {
-    font-size: 1.3rem;
-}
-
-/* Make the summary arrow more visible */
-details[open] summary {
-    border-bottom: 1px solid var(--border-color);
+.details-content li {
+    margin-bottom: 0.9rem;
 }
 
 
