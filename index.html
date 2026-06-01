@@ -4,8 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Great British National Restoration Framework</title>
-    <meta name="description" content="A plan to rebuild the United Kingdom's governance">
+    <meta name="description" content="A coherent minarchist blueprint for restoring lean, effective, and sustainable British governance.">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            padding: 3rem 5%;
+        }
+        .card {
+            height: 380px;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            color: white;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+        }
+        .card-bg {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.65);
+            transition: filter 0.4s ease;
+        }
+        .card:hover .card-bg {
+            filter: brightness(0.45);
+        }
+        .card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem 1.75rem;
+            background: linear-gradient(transparent, rgba(0,0,0,0.85));
+        }
+        .card h3 {
+            margin: 0 0 0.75rem 0;
+            font-size: 1.55rem;
+        }
+        .card p {
+            margin: 0 0 1.25rem 0;
+            opacity: 0.95;
+            line-height: 1.5;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -13,90 +62,128 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="philosophy.html">Philosophy</a></li>
+                <li><a href="taxation.html">Taxation</a></li>
+                <li><a href="prune.html">Privatisation</a></li>
+                <li><a href="law-order-flip.html">Justice</a></li>
+                <li><a href="pillar.html">Governance</a></li>
+                <li><a href="golden-hurdle.html">Immigration</a></li>
+                <li><a href="stork.html">Demographics</a></li>
+                <li><a href="marriage.html">Marriage</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <!-- Hero Section -->
+        <!-- Hero -->
+        <!-- Hero -->
         <section class="hero">
             <h2>A plan to rebuild the United Kingdom's governance</h2>
-            <p>These pages seek to lay out a vision for a largely self regulating, stable, British governance framework promoting and maintaining liberty, self-reliance, stability and prosperity.</p>
+            <p>This project is a comprehensive blueprint for restoring a lean, effective, and sustainable British state — one that does its essential job and nothing more.</p>
             <button id="theme-toggle">🌙 Dark Mode</button>
         </section>
 
-        <!-- Cards Section -->
-        <section class="cards">
-            <h2>Featured Sections</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <h3>Core Philosophy</h3>
-                    <p>Description of your first project or interest.</p>
-                    <a href="philosophy.html" class="card-link">Learn more →</a>
-                </div>
-                <div class="card">
-                    <h3>Taxation and Environment</h3>
-                    <p>A framework for a system of taxes on environmental externalities that effect everyone.</p>
-                    <a href="taxation.html" class="card-link">Learn more →</a>
-                </div>
-                <div class="card">
-                    <h3>Privatisation</h3>
-                    <p>A plan for reducing the involvement of the state where it does not need to be.</p>
-                    <a href="prune.html" class="card-link">Learn more →</a>
-                </div>
-                <div class="card">
-                    <h3>Law & Order</h3>
-                    <p>A framework for restructuring law and order.</p>
-                    <a href="law-order-flip.html" class="card-link">Learn more →</a>
-                </div>
-                <div class="card">
-                    <h3>Governance</h3>
-                    <p>A return to a more local and responsive governance structure.</p>
-                    <a href="pillar.html" class="card-link">Learn more →</a>
-                </div>
-                <div class="card">
-                    <h3>Demographics</h3>
-                    <p>A plan for revitalising the family and stabilsing the nation.</p>
-                    <a href="stork.html" class="card-link">Learn more →</a>
-                </div>
-                <div class="card">
-                    <h3>Family</h3>
-                    <p>A plan for removing the state from marriage and returning it to the legal union of individuals.</p>
-                    <a href="marriage.html" class="card-link">Learn more →</a>
-                </div>
-                <div class="card">
-                    <h3>Borders and Immigration</h3>
-                    <p>A self-stabilising and self funding immigration system.</p>
-                    <a href="golden-hurdle.html" class="card-link">Learn more →</a>
-                </div>
-                <div class="card">
-                    <h3>Nationality, citizenship, and the vote</h3>
-                    <p>Membership of the nation and the electorate.</p>
-                    <a href="nationality.html" class="card-link">Learn more →</a>
-                </div>
-                <div class="card">
-                    <h3>Implementation Roadmap</h3>
-                    <p>How this project will be implemented over the course of twenty years.</p>
-                    <a href="implementation.html" class="card-link">Learn more →</a>
-                </div>
-                <div class="card">
-                    <h3>Full Documents</h3>
-                    <p>Full documents in text format.</p>
-                    <a href="archive.html" class="card-link">Learn more →</a>
-                </div>
-                <div class="card">
-                    <h3>Thoughts</h3>
-                    <p>Random ramblings and observations.</p>
-                    <a href="#" class="card-link">Read more →</a>
-                </div>
+        <!-- Featured Cards -->
+        <section class="featured">
+            <h2>Core Components</h2>
+            <div class="cards-grid">
+                
+                <a href="philosophy.html" class="card">
+                    <div class="card-bg" style="background-image: url('Images/philosophy.png');"></div>
+                    <div class="card-content">
+                        <h3>Core Philosophy</h3>
+                        <p>The Night-Watchman State done properly: defence, justice, borders, and nothing more. Grounded in earned responsibility and aggregate value.</p>
+                        <span>Learn more →</span>
+                    </div>
+                </a>
+
+                <a href="taxation.html" class="card">
+                    <div class="card-bg" style="background-image: url('Images/taxation.png');"></div>
+                    <div class="card-content">
+                        <h3>Taxation & Environment</h3>
+                        <p>Pigouvian Externality Tax Suite (PETS) — especially Heat Output Tax — replacing most existing taxes with efficient, hard-to-evade cost-recovery mechanisms.</p>
+                        <span>Learn more →</span>
+                    </div>
+                </a>
+
+                <a href="prune.html" class="card">
+                    <div class="card-bg" style="background-image: url('Images/privatisation.png');"></div>
+                    <div class="card-content">
+                        <h3>Privatisation (PLUSH)</h3>
+                        <p>Progressive liquidation of unnecessary state holdings to reduce debt, cut taxes, and return functions to private hands and local control.</p>
+                        <span>Learn more →</span>
+                    </div>
+                </a>
+
+                <a href="law-order-flip.html" class="card">
+                    <div class="card-bg" style="background-image: url('Images/justice.png');"></div>
+                    <div class="card-content">
+                        <h3>Law & Order</h3>
+                        <p>FLIP policing, harsh but proportionate justice, restitution, and market-driven accountability while maintaining a strong night-watchman core.</p>
+                        <span>Learn more →</span>
+                    </div>
+                </a>
+
+                <a href="pillar.html" class="card">
+                    <div class="card-bg" style="background-image: url('Images/governance.png');"></div>
+                    <div class="card-content">
+                        <h3>Governance & Localism</h3>
+                        <p>PILLAR — radical subsidiarity, historic counties, parish moots, Jubilee sunset clauses, and Heinleinian earned franchise.</p>
+                        <span>Learn more →</span>
+                    </div>
+                </a>
+
+                <a href="golden-hurdle.html" class="card">
+                    <div class="card-bg" style="background-image: url('Images/immigration.png');"></div>
+                    <div class="card-content">
+                        <h3>Immigration</h3>
+                        <p>The Golden Hurdle — refundable entry bonds, biometric recording, and strict separation of nationals from non-nationals' entitlements.</p>
+                        <span>Learn more →</span>
+                    </div>
+                </a>
+
+                <a href="marriage.html" class="card">
+                    <div class="card-bg" style="background-image: url('Images/marriage.png');"></div>
+                    <div class="card-content">
+                        <h3>Marriage & Family</h3>
+                        <p>Private marriage contracts returning authority to individuals while reinforcing parental responsibility and stable child-rearing.</p>
+                        <span>Learn more →</span>
+                    </div>
+                </a>
+
+                <a href="stork.html" class="card">
+                    <div class="card-bg" style="background-image: url('Images/demographics.png');"></div>
+                    <div class="card-content">
+                        <h3>Demographics</h3>
+                        <p>STORK rebate and strategic correction of state-induced fertility collapse while maintaining national continuity.</p>
+                        <span>Learn more →</span>
+                    </div>
+                </a>
+                
+                <a href="nationality.html" class="card">
+                    <div class="card-bg" style="background-image: url('Images/nationality.png');"></div>
+                    <div class="card-content">
+                        <h3>Nationality and Citizenship</h3>
+                        <p>Membership of the nation and the electorate.</p>
+                        <span>Learn more →</span>
+                    </div>
+                </a>
+
+                <a href="implementation.html" class="card">
+                    <div class="card-bg" style="background-image: url('Images/implementation.png');"></div>
+                    <div class="card-content">
+                        <h3>Roadmap</h3>
+                        <p>How this project will be implemented over the course of twenty years.</p>
+                        <span>Learn more →</span>
+                    </div>
+                </a>
+
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Ben Frost. Built with plain HTML + CSS. All rights reserved.</p>
+        <p>&copy; 2026 Great British National Restoration Framework. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>

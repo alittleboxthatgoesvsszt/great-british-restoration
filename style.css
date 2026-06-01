@@ -80,6 +80,49 @@ nav a:hover {
     margin-bottom: 1rem;
 }
 
+.hero {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* optional - nice parallax feel */
+    position: relative;
+    color: white;
+}/* Light mode default (with your bridge image) */
+.hero {
+    background-image: url('Images/bridge.png');
+}
+
+/* Dark mode version - slightly darker overlay */
+[data-theme="dark"] .hero {
+    background-image: url('Images/bridge.png');
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;     /* Base setting */
+}
+
+/* Dark overlay for text readability */
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);           /* Light mode overlay */
+    border-radius: 12px;
+    z-index: 1;
+}
+
+[data-theme="dark"] .hero::before {
+    background: rgba(0, 0, 0, 0.65);           /* Stronger overlay in dark mode */
+    z-index: 1;
+}
+
+.hero > * {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h2, .hero p {
+    text-shadow: 0 2px 8px rgba(0,0,0,0.7);   /* Helps text stand out */
+}
 /* Cards */
 .cards h2 {
     text-align: center;
