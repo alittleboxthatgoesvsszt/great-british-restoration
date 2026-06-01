@@ -1,5 +1,4 @@
 /* CSS Variables for easy theming */
-/* CSS Variables for easy theming */
 :root {
     --bg-color: #fbf9f4;           /* Warm off-white — very easy on the eyes */
     --text-color: #2c2c2c;         /* Darker, softer black */
@@ -71,47 +70,35 @@ nav a:hover {
     margin-bottom: 3rem;
 }
 
-[data-theme="dark"] .hero {
-    background: linear-gradient(135deg, #2a2a2a, #1f1f1f);
-}
-
 .hero h2 {
     font-size: 2.2rem;
     margin-bottom: 1rem;
-}
-
-.hero {
+}.hero {
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* optional - nice parallax feel */
+    background-attachment: fixed;
     position: relative;
     color: white;
-}/* Light mode default (with your bridge image) */
-.hero {
-    background-image: url('Images/bridge.png');
 }
 
-/* Dark mode version - slightly darker overlay */
+/* Bridge background - works in both light and dark mode */
+.hero,
 [data-theme="dark"] .hero {
     background-image: url('Images/bridge.png');
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;     /* Base setting */
 }
 
-/* Dark overlay for text readability */
+/* Dark overlay for readability */
 .hero::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.45);           /* Light mode overlay */
+    background: rgba(0, 0, 0, 0.45);
     border-radius: 12px;
     z-index: 1;
 }
 
 [data-theme="dark"] .hero::before {
-    background: rgba(0, 0, 0, 0.65);           /* Stronger overlay in dark mode */
+    background: rgba(0, 0, 0, 0.68);
     z-index: 1;
 }
 
@@ -121,8 +108,10 @@ nav a:hover {
 }
 
 .hero h2, .hero p {
-    text-shadow: 0 2px 8px rgba(0,0,0,0.7);   /* Helps text stand out */
+    text-shadow: 0 2px 10px rgba(0,0,0,0.8);
 }
+
+
 /* Cards */
 .cards h2 {
     text-align: center;
