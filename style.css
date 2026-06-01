@@ -31,34 +31,53 @@ body {
     padding: 20px;
 }
 
-/* Header */
+/* ==================== FIXED NAV BAR ==================== */
 header {
-    text-align: center;
-    padding: 2rem 0;
-    border-bottom: 2px solid var(--border-color);
+    position: relative;           /* Container for the header */
 }
 
-header h1 {
-    font-size: 2.8rem;
-    margin-bottom: 0.5rem;
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--header-bg, #1a1a1a);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    padding: 0.9rem 5%;
 }
 
-nav ul {
-    list-style: none;
+.main-nav ul {
     display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 1rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: center;   /* Centers the nav items */
 }
 
-nav a {
+.main-nav li a {
+    color: white;
     text-decoration: none;
-    color: var(--accent-color);
     font-weight: 500;
+    transition: color 0.2s;
 }
 
-nav a:hover {
-    text-decoration: underline;
+.main-nav li a:hover {
+    color: #ffd700;
+}
+
+/* Main Title - sits below the fixed nav */
+header h1 {
+    margin: 90px 0 1.5rem 0;     /* Creates space under the fixed nav */
+    text-align: center;
+    font-size: 2.1rem;
+}
+
+/* Push the rest of the content down */
+main {
+    margin-top: 20px;
 }
 
 /* Hero */
