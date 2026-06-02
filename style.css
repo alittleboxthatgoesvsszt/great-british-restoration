@@ -258,14 +258,20 @@ summary {
     font-size: 1.28rem;
     font-weight: 600;
     cursor: pointer;
-    background-color: var(--header-bg, #1f1f1f);
+    color: #f0f0f0;
+    background-color: var(--header-bg, #222222);
     list-style: none;
     position: relative;
     transition: background-color 0.2s;
 }
 
+[data-theme="dark"] summary {
+    color: #f0f0f0;
+    background-color: #1f1f1f;
+}
+
 summary:hover {
-    background-color: #2a2a2a;
+    background-color: #2c2c2c;
 }
 
 summary::-webkit-details-marker {
