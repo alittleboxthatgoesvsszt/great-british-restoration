@@ -31,10 +31,12 @@ body {
     padding: 20px;
 }
 
-/* ==================== FIXED NAV BAR ==================== */
+
 header {
     position: relative;           /* Container for the header */
 }
+
+/* ==================== FIXED NAV BAR ==================== */
 
 .main-nav {
     position: fixed;
@@ -47,14 +49,19 @@ header {
     padding: 0.9rem 5%;
 }
 
+
 .main-nav ul {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;          /* Force single line - never wrap */
+    overflow-x: auto;            /* Enable horizontal scroll when needed */
+    overflow-y: hidden;
     gap: 1.5rem;
     list-style: none;
     margin: 0;
     padding: 0;
-    justify-content: center;   /* Centers the nav items */
+    justify-content: center;   /* Centers the nav items */-webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    white-space: nowrap;
 }
 
 .main-nav li a {
@@ -67,6 +74,10 @@ header {
 .main-nav li a:hover {
     color: #ffd700;
 }
+
+
+
+
 
 /* ==================== LINKS ==================== */
 
@@ -124,6 +135,7 @@ main {
 .hero h2 {
     font-size: 2.2rem;
     margin-bottom: 1rem;
+    
 }.hero {
     background-size: cover;
     background-position: center;
