@@ -36,8 +36,7 @@ header {
     position: relative;           /* Container for the header */
 }
 
-/* ==================== FIXED NAV BAR ==================== */
-
+/* ==================== FIXED NAV BAR - NEVER WRAP ==================== */
 .main-nav {
     position: fixed;
     top: 0;
@@ -49,25 +48,32 @@ header {
     padding: 0.9rem 5%;
 }
 
-
 .main-nav ul {
     display: flex;
-    flex-wrap: nowrap;          /* Force single line - never wrap */
-    overflow-x: auto;            /* Enable horizontal scroll when needed */
+    flex-wrap: nowrap !important;     /* Force single line */
+    overflow-x: auto;                /* Horizontal scroll when needed */
     overflow-y: hidden;
-    gap: 1.5rem;
+    gap: 1.4rem;
     list-style: none;
     margin: 0;
     padding: 0;
-    justify-content: center;   /* Centers the nav items */-webkit-overflow-scrolling: touch;
+    justify-content: center;
+    -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
     white-space: nowrap;
+}
+
+.main-nav li {
+    flex-shrink: 0;
 }
 
 .main-nav li a {
     color: white;
     text-decoration: none;
     font-weight: 500;
+    padding: 0.6rem 0.9rem;
+    display: block;
+    white-space: nowrap;
     transition: color 0.2s;
 }
 
@@ -75,8 +81,83 @@ header {
     color: #ffd700;
 }
 
+/* Subtle scroll indicator on right edge */
+.main-nav::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 35px;
+    background: linear-gradient(to right, transparent, var(--header-bg, #1a1a1a));
+    pointer-events: none;
+    z-index: 1;
+}
 
 
+/* ==================== VERTICAL MOBILE NAV - No Scrollbar ==================== */
+@media (max-width: 900px) {
+    .main-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 72px;
+        height: 100vh;
+        padding: 1.8rem 0.5rem;
+        overflow-y: auto;
+        box-shadow: 3px 0 12px rgba(0, 0, 0, 0.35);
+        z-index: 1000;
+    }
+
+    /* Hide scrollbar but keep scrolling */
+    .main-nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .main-nav {
+        -ms-overflow-style: none;       /* IE and Edge */
+        scrollbar-width: none;          /* Firefox */
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: 1.4rem;
+        align-items: center;
+    }
+
+    .main-nav li a {
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        padding: 1.6rem 0.4rem;
+        font-size: 1.0rem;
+        letter-spacing: 1.8px;
+        transform: rotate(180deg);
+        white-space: nowrap;
+        width: 32px;
+        text-align: center;
+    }
+
+    /* Push main content right */
+    main {
+        margin-left: 72px;
+        margin-top: 20px;
+    }
+
+    header h1 {
+        margin-left: 72px;
+        margin-top: 25px;
+    }
+}
+
+/* Very small phones */
+@media (max-width: 480px) {
+    .main-nav {
+        width: 66px;
+    }
+    main, header h1 {
+        margin-left: 66px;
+    }
+}
 
 
 /* ==================== LINKS ==================== */
